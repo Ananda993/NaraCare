@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat dengan Nara - NaraCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-page">
+    <header class="chat-header">
+        <div class="chat-header-container">
+            <a href="index.html" class="back-button" aria-label="Kembali ke beranda">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="chat-title">
+                <div class="nara-avatar">N</div>
+                <div>
+                    <h1>Nara</h1>
+                    <span class="status">Online • Menemani dengan empati</span>
+                </div>
+            </div>
+            <button id="endSessionBtn" class="end-session-btn" aria-haspopup="dialog">
+                <i class="fas fa-door-open"></i><span class="btn-text"> Akhiri</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="chat-container" aria-live="polite">
+        <div id="chatMessages" class="chat-messages" role="log">
+            <div class="message nara-message">
+                <div class="nara-avatar">N</div>
+                <div class="message-content">
+                    <p>Halo! Aku Nara.</p>
+                    <p>Terima kasih sudah datang. Ruang ini aman untuk kamu ceritakan apa pun tanpa penilaian. Tarik napas sejenak; aku mendengar dengan saksama.</p>
+                    <p>Apa yang sedang kamu rasakan sekarang?</p>
+                    <div class="message-time">Baru saja</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="typingIndicator" class="typing-indicator" aria-hidden="true">
+            <div class="message nara-message">
+                <div class="nara-avatar">N</div>
+                <div class="message-content">
+                    <div class="typing-dots" role="status" aria-label="Nara sedang mengetik">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="chat-input-container">
+        <div class="chat-input-wrapper">
+            <label class="sr-only" for="messageInput">Tulis pesan untuk Nara</label>
+            <textarea
+                id="messageInput"
+                placeholder="Bagikan perasaanmu di sini... Tekan Enter untuk kirim"
+                rows="1"
+                maxlength="500"
+            ></textarea>
+            <button id="sendButton" class="send-button" aria-label="Kirim pesan">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        <div class="chat-safety-note">
+            <small>
+                <i class="fas fa-shield-alt"></i>
+                Percakapan bersifat rahasia dan akan terhapus otomatis saat sesi selesai.
+            </small>
+        </div>
+    </footer>
+
+    <div id="endSessionModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Akhiri Konsultasi?</h2>
+            </div>
+            <div class="modal-body">
+                <p>Kamu yakin ingin mengakhiri percakapan dengan Nara?</p>
+                <p><strong>Semua pesan akan dihapus permanen setelah kamu konfirmasi.</strong></p>
+                <div class="modal-options">
+                    <button id="confirmEndBtn" class="btn-danger">
+                        <i class="fas fa-trash"></i> Ya, Akhiri Sesi
+                    </button>
+                    <button id="cancelEndBtn" class="btn-secondary">
+                        <i class="fas fa-times"></i> Batalkan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sessionEndedModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content session-ended">
+            <div class="modal-header">
+                <div class="success-icon" aria-hidden="true">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2>Sesi Telah Berakhir</h2>
+            </div>
+            <div class="modal-body">
+                <p>Terima kasih sudah berbagi dengan Nara. Semoga hatimu terasa lebih ringan.</p>
+                <p>Ingat, kamu bisa kembali kapan saja.</p>
+                <div class="emergency-contact-modal">
+                    <p><strong>Untuk bantuan langsung:</strong></p>
+                    <ul>
+                        <li>119 ext. 8 — Layanan Darurat Kesehatan Mental</li>
+                        <li>Into The Light Indonesia — Pencegahan Bunuh Diri</li>
+                    </ul>
+                </div>
+                <div class="modal-options">
+                    <a href="index.html" class="btn-primary">
+                        <i class="fas fa-home"></i> Kembali ke Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
+
