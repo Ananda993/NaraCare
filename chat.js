@@ -134,7 +134,7 @@ class NaraChat {
             return 'Ikut senang mendengarnya. Ceritakan hal kecil apa yang membuat harimu terasa lebih ringan.';
         }
 
-        if (!this.apiKey || this.apiKey === 'MASUKKAN_API_KEY_GEMINI_ANDA_DI_SINI') {
+        if (!this.apiKey || this.apiKey === 'AIzaSyBxtSa-IyAYmTtER7su6yk0S80TKfzyyCE') {
             return this.getOfflineResponse();
         }
 
@@ -251,3 +251,4 @@ class NaraChat {
 document.addEventListener('DOMContentLoaded', () => {
     new NaraChat();
 });
+
