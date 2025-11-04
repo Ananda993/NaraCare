@@ -138,7 +138,6 @@ class NaraChat {
             return this.getOfflineResponse();
         }
 
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
 
         const payload = {
             contents: [{
@@ -251,5 +250,6 @@ class NaraChat {
 document.addEventListener('DOMContentLoaded', () => {
     new NaraChat();
 });
+
 
 
